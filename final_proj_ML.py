@@ -1,4 +1,3 @@
-import joblib
 import kagglehub
 import nltk
 import streamlit as st
@@ -61,8 +60,7 @@ y_pred = clf.predict(x_test)
 ac = accuracy_score(y_test,y_pred)
 cm = confusion_matrix(y_test,y_pred)
 cr = classification_report(y_test,y_pred)
-joblib.dump(clf, "model.pkl")
-joblib.dump(cv, "vectorizer.pkl")
+
 #=======================
 
 menu = st.sidebar.selectbox('Select',["📊 Dataset","🤖 Train Model","✉️ Predict Message"])
