@@ -1,6 +1,5 @@
 import nltk
 import streamlit as st
-nltk.download('stopwords')
 import string
 import matplotlib.pyplot as plt
 from nltk.corpus import stopwords
@@ -14,7 +13,9 @@ from sklearn.metrics import accuracy_score,confusion_matrix,classification_repor
 import matplotlib.pyplot as plt
 import streamlit as st
 import seaborn as sns
-
+nltk.download('stopwords', quiet=True)
+nltk.download('wordnet', quiet=True)
+nltk.download('punkt', quiet=True)
 
 
 # load data
