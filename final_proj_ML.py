@@ -1,4 +1,3 @@
-import kagglehub
 import nltk
 import streamlit as st
 nltk.download('stopwords')
@@ -21,8 +20,8 @@ import seaborn as sns
 # load data
 @st.cache_data
 def load_data() :
-    path = kagglehub.dataset_download("uciml/sms-spam-collection-dataset")
-    data = pd.read_csv(path+'/spam.csv',encoding='latin-1')
+    path = "https://github.com/mohitgupta-1O1/Kaggle-SMS-Spam-Collection-Dataset-/blob/master/spam.csv"
+    data = pd.read_csv(path,encoding='latin-1')
     data = data.drop(['Unnamed: 2','Unnamed: 3','Unnamed: 4'],axis=1)
     data['len'] = data['v2'].apply(lambda x: len(x))
     return data
